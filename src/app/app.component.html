@@ -1,0 +1,36 @@
+<div class="container" id="mainContainer">
+  <div class="columns is-centered">
+    <div class="box column is-one-third">
+      <h1 class="title has-text-centered">Typing Challenge</h1>
+
+      <p class="has-text-centered">
+        <span *ngFor="let letter of randomText.split(''); let i = index;"
+          [class]="compare(letter, inputedText[i])"
+          >{{ letter }}</span>
+      </p>
+
+      <div class="field">
+        <input type="text" id="usrInput" class="input" (keyup)="onType($event)">
+      </div>
+
+      <div class="box has-text-centered" *ngIf="verify()">
+        <br>
+
+        <h1 class="title">Success!</h1>
+
+        <br>
+        
+        <button class="button is-primary is-light" (click)="regen()">Re-generate</button>
+      </div>
+
+      <progress class="progress is-primary" [value]="progress" max="1">{{ progress }}</progress>
+
+      <span class="icon-text">
+        <span class="icon">
+          <i class="fas fa-hourglass"></i>
+        </span>
+        <span>Time: {{ timeSpent }}s</span>
+      </span>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+.pending {
+    color:grey;
+}
+
+.correct {
+    color: #228B22;
+}
+
+.incorrect {
+    color: #B22222;
+    font-weight: bold;
+}
+
+#mainContainer {
+    margin-top: 8rem;
+}
